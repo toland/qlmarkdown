@@ -23,6 +23,7 @@
 				<array>
 					<string>markdown</string>
 					<string>mdown</string>
+					<string>md</string>
 				</array>
 			</dict>
 		</dict>
