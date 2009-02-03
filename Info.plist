@@ -16,6 +16,7 @@
             <key>UTTypeConformsTo</key>
             <array>
 				<string>public.text</string>
+				<string>public.plain-text</string>
 			</array>
 			<key>UTTypeTagSpecification</key>
 			<dict>
