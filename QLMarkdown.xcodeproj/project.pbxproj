@@ -9,10 +9,25 @@
 /* Begin PBXBuildFile section */
 		0A80BFA50E21A2E200C8BF14 /* markdown.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A80BFA40E21A2E200C8BF14 /* markdown.h */; };
 		0A80BFA70E21A2ED00C8BF14 /* markdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A80BFA60E21A2ED00C8BF14 /* markdown.m */; };
-		0A80BFAA0E21A5B100C8BF14 /* Markdown.pl in Resources */ = {isa = PBXBuildFile; fileRef = 0A80BFA90E21A5B100C8BF14 /* Markdown.pl */; };
 		0A80BFB20E21A90900C8BF14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A80BFB10E21A90900C8BF14 /* Cocoa.framework */; };
 		0A80BFCC0E21B61A00C8BF14 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A80BFCB0E21B61A00C8BF14 /* WebKit.framework */; };
 		2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */; };
+		4446CFF50F41899C00BAC3F4 /* amalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFE20F41899C00BAC3F4 /* amalloc.c */; };
+		4446CFF60F41899C00BAC3F4 /* amalloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 4446CFE30F41899C00BAC3F4 /* amalloc.h */; };
+		4446CFF70F41899C00BAC3F4 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 4446CFE40F41899C00BAC3F4 /* config.h */; };
+		4446CFF90F41899C00BAC3F4 /* cstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 4446CFE60F41899C00BAC3F4 /* cstring.h */; };
+		4446CFFA0F41899C00BAC3F4 /* docheader.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFE70F41899C00BAC3F4 /* docheader.c */; };
+		4446CFFB0F41899C00BAC3F4 /* dumptree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFE80F41899C00BAC3F4 /* dumptree.c */; };
+		4446CFFC0F41899C00BAC3F4 /* generate.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFE90F41899C00BAC3F4 /* generate.c */; };
+		4446CFFD0F41899C00BAC3F4 /* markdown.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFEA0F41899C00BAC3F4 /* markdown.c */; };
+		4446CFFE0F41899C00BAC3F4 /* markdown.h in Headers */ = {isa = PBXBuildFile; fileRef = 4446CFEB0F41899C00BAC3F4 /* markdown.h */; };
+		4446CFFF0F41899C00BAC3F4 /* mkdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFEC0F41899C00BAC3F4 /* mkdio.c */; };
+		4446D0000F41899C00BAC3F4 /* mkdio.h in Headers */ = {isa = PBXBuildFile; fileRef = 4446CFED0F41899C00BAC3F4 /* mkdio.h */; };
+		4446D0020F41899C00BAC3F4 /* resource.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFEF0F41899C00BAC3F4 /* resource.c */; };
+		4446D0030F41899C00BAC3F4 /* toc.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFF00F41899C00BAC3F4 /* toc.c */; };
+		4446D0050F41899C00BAC3F4 /* wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFF20F41899C00BAC3F4 /* wrapper.c */; };
+		4446D0060F41899C00BAC3F4 /* wrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4446CFF30F41899C00BAC3F4 /* wrapper.h */; };
+		4446D0070F41899C00BAC3F4 /* xmlpage.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFF40F41899C00BAC3F4 /* xmlpage.c */; };
 		61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */; };
 		8D576312048677EA00EA77CD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 08FB77B6FE84183AC02AAC07 /* main.c */; settings = {ATTRIBUTES = (); }; };
 		8D576314048677EA00EA77CD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */; };
@@ -27,11 +42,26 @@
 		08FB77B6FE84183AC02AAC07 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0A80BFA40E21A2E200C8BF14 /* markdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = markdown.h; sourceTree = "<group>"; };
 		0A80BFA60E21A2ED00C8BF14 /* markdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = markdown.m; sourceTree = "<group>"; };
-		0A80BFA90E21A5B100C8BF14 /* Markdown.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = Markdown.pl; sourceTree = "<group>"; };
 		0A80BFB10E21A90900C8BF14 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		0A80BFCB0E21B61A00C8BF14 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
 		2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
+		4446CFE20F41899C00BAC3F4 /* amalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amalloc.c; sourceTree = "<group>"; };
+		4446CFE30F41899C00BAC3F4 /* amalloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amalloc.h; sourceTree = "<group>"; };
+		4446CFE40F41899C00BAC3F4 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		4446CFE60F41899C00BAC3F4 /* cstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cstring.h; sourceTree = "<group>"; };
+		4446CFE70F41899C00BAC3F4 /* docheader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = docheader.c; sourceTree = "<group>"; };
+		4446CFE80F41899C00BAC3F4 /* dumptree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dumptree.c; sourceTree = "<group>"; };
+		4446CFE90F41899C00BAC3F4 /* generate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = generate.c; sourceTree = "<group>"; };
+		4446CFEA0F41899C00BAC3F4 /* markdown.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = markdown.c; sourceTree = "<group>"; };
+		4446CFEB0F41899C00BAC3F4 /* markdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = markdown.h; sourceTree = "<group>"; };
+		4446CFEC0F41899C00BAC3F4 /* mkdio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mkdio.c; sourceTree = "<group>"; };
+		4446CFED0F41899C00BAC3F4 /* mkdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mkdio.h; sourceTree = "<group>"; };
+		4446CFEF0F41899C00BAC3F4 /* resource.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = resource.c; sourceTree = "<group>"; };
+		4446CFF00F41899C00BAC3F4 /* toc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = toc.c; sourceTree = "<group>"; };
+		4446CFF20F41899C00BAC3F4 /* wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapper.c; sourceTree = "<group>"; };
+		4446CFF30F41899C00BAC3F4 /* wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wrapper.h; sourceTree = "<group>"; };
+		4446CFF40F41899C00BAC3F4 /* xmlpage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xmlpage.c; sourceTree = "<group>"; };
 		61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		8D576316048677EA00EA77CD /* QLMarkdown.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLMarkdown.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +90,7 @@
 		089C166AFE841209C02AAC07 /* QLMarkdown */ = {
 			isa = PBXGroup;
 			children = (
+				4446CFDF0F41898200BAC3F4 /* discount */,
 				08FB77AFFE84173DC02AAC07 /* Source */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
@@ -84,7 +115,6 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0A80BFA90E21A5B100C8BF14 /* Markdown.pl */,
 				8D576317048677EA00EA77CD /* Info.plist */,
 				8D5B49A704867FD3000E48DA /* InfoPlist.strings */,
 			);
@@ -111,6 +141,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4446CFDF0F41898200BAC3F4 /* discount */ = {
+			isa = PBXGroup;
+			children = (
+				4446CFE20F41899C00BAC3F4 /* amalloc.c */,
+				4446CFE30F41899C00BAC3F4 /* amalloc.h */,
+				4446CFE40F41899C00BAC3F4 /* config.h */,
+				4446CFE60F41899C00BAC3F4 /* cstring.h */,
+				4446CFE70F41899C00BAC3F4 /* docheader.c */,
+				4446CFE80F41899C00BAC3F4 /* dumptree.c */,
+				4446CFE90F41899C00BAC3F4 /* generate.c */,
+				4446CFEA0F41899C00BAC3F4 /* markdown.c */,
+				4446CFEB0F41899C00BAC3F4 /* markdown.h */,
+				4446CFEC0F41899C00BAC3F4 /* mkdio.c */,
+				4446CFED0F41899C00BAC3F4 /* mkdio.h */,
+				4446CFEF0F41899C00BAC3F4 /* resource.c */,
+				4446CFF00F41899C00BAC3F4 /* toc.c */,
+				4446CFF20F41899C00BAC3F4 /* wrapper.c */,
+				4446CFF30F41899C00BAC3F4 /* wrapper.h */,
+				4446CFF40F41899C00BAC3F4 /* xmlpage.c */,
+			);
+			path = discount;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -119,6 +172,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A80BFA50E21A2E200C8BF14 /* markdown.h in Headers */,
+				4446CFF60F41899C00BAC3F4 /* amalloc.h in Headers */,
+				4446CFF70F41899C00BAC3F4 /* config.h in Headers */,
+				4446CFF90F41899C00BAC3F4 /* cstring.h in Headers */,
+				4446CFFE0F41899C00BAC3F4 /* markdown.h in Headers */,
+				4446D0000F41899C00BAC3F4 /* mkdio.h in Headers */,
+				4446D0060F41899C00BAC3F4 /* wrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +227,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
-				0A80BFAA0E21A5B100C8BF14 /* Markdown.pl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +251,16 @@
 				2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */,
 				61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.m in Sources */,
 				0A80BFA70E21A2ED00C8BF14 /* markdown.m in Sources */,
+				4446CFF50F41899C00BAC3F4 /* amalloc.c in Sources */,
+				4446CFFA0F41899C00BAC3F4 /* docheader.c in Sources */,
+				4446CFFB0F41899C00BAC3F4 /* dumptree.c in Sources */,
+				4446CFFC0F41899C00BAC3F4 /* generate.c in Sources */,
+				4446CFFD0F41899C00BAC3F4 /* markdown.c in Sources */,
+				4446CFFF0F41899C00BAC3F4 /* mkdio.c in Sources */,
+				4446D0020F41899C00BAC3F4 /* resource.c in Sources */,
+				4446D0030F41899C00BAC3F4 /* toc.c in Sources */,
+				4446D0050F41899C00BAC3F4 /* wrapper.c in Sources */,
+				4446D0070F41899C00BAC3F4 /* xmlpage.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
