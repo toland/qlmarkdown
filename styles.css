@@ -1,0 +1,16 @@
+body {
+    font-family: "Helvetica";
+    background-color: #fff;
+    margin: 1em;
+}
+
+code {
+    font-family: "Monaco";
+    font-size: 85%;
+}
+
+pre {
+    border: 1px solid #ccc;
+    background-color: #eee;
+    padding: 0.5em;
+}
