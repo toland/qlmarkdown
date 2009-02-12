@@ -41,6 +41,14 @@ the file `discount/COPYRIGHT` for more information.
 Version History
 ---------------
 
+Version 1.1 - Feb 11, 2009
+
+* Adding a little bit of CSS styling. (mdk)
+* Replace the Perl markdown renderer with a native C one (discount). (mdk)
+* Conform to public plain-text. Will make spotlight index the file
+  contents. (mdk) 
+* Added support for .md file extension (sant0sk1)
+
 Version 1.0 - July 15, 2008
 
 * Initial release.
