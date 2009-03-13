@@ -1,16 +1,183 @@
+/* body */
 body {
-    font-family: "Helvetica";
-    background-color: #fff;
-    margin: 1em;
+	margin: 20px 40px;
+	background-color: #fff;
+	color: #000;
+	font: 12px 'Lucida Grande', Geneva, Verdana, Arial, Helvetica, sans-serif;
 }
 
-code {
-    font-family: "Monaco";
-    font-size: 85%;
+/* links */
+a:link {
+	color: #00f;
+	text-decoration: none;
 }
+
+a:visited {
+	color: #00a;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #f60;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #f60;
+	text-decoration: underline;
+}
+
+/* html tags */
+th, td, ul, ol, li {
+	font: 12px 'Lucida Grande', Geneva, Verdana, Arial, Helvetica, sans-serif;
+}
+
+code, pre	{
+	font-family: 'DejaVu Sans Mono', monaco, 'Courier New', courier, monospace;
+	font-size: 10px;
+}
+
+	/*  Work around IE/Win code size bug - courtesy Jesper, waffle.wootest.net  */
+
+* html code	{
+	font-size: 101%;
+}
+
+* html pre {
+	font-size: 101%;
+}
+
+h1 code, h2 code, h3 code, h4 code, th code { font-size: 95%; font-weight: normal; }
 
 pre {
-    border: 1px solid #ccc;
-    background-color: #eee;
-    padding: 0.5em;
+	border: 1px solid #BEC5CC;
+	background: #EFF2F7;
+	padding:  5px;
+}
+
+/* headers */
+h1	{
+	margin: 20px 0 15px 0;
+	padding: 0;
+	font: bold 20px 'Myriad', 'Lucida Grande', Geneva, Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+}
+
+h2	{
+	margin: 15px 0 5px 0;
+	padding: 0;
+	font-size: 16px;
+	color: #000;
+}
+
+h3	{
+	margin: 10px 0 0 0;
+	padding: 0;
+	font-size: 12px;
+	color: #000;
+}
+
+h4	{
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+
+h5 {
+
+}
+
+h6	{
+	margin: 0;
+	padding: 0;
+	font: normal 12px 'Lucida Grande', Geneva, Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+}
+
+p	{
+	margin: 0 0 10px 0;
+	padding: 0;
+	font: 12px 'Lucida Grande', Geneva, Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+}
+
+form {
+	margin: 0;
+}
+
+button {
+	margin: 3px 0 10px 0;
+}
+
+/* lists */
+ul	{
+	list-style: square outside;
+	margin: 0 0 0 30px;
+	padding: 0 0 1em 0;
+}
+
+li	{
+	margin-top: 3px;
+}
+
+ul ul {
+	margin-left: 40px;
+}
+
+ol {
+	margin: 0 0 10px 1.5em;
+	padding-left: 1.5em;
+}
+
+
+/* tables */
+table {
+	border: 1px solid #919699;
+	margin-bottom: 10px;
+}
+
+th {
+	padding: 4px 8px 4px 8px;
+	background: #E2E2E2;
+	font-size: 12px;
+	font-weight: bold;
+	border-bottom: 1px solid #919699;
+	border-right: 1px solid #919699;
+}
+
+td {
+	padding: 8px;
+	font-size: 12px;
+	text-align: left;
+	vertical-align: top;
+	border-bottom: 1px solid #919699;
+	border-right: 1px solid #919699;
+}
+
+table td {
+	border: none;
+	padding: 0;
+	vertical-align: middle;
+}
+
+/* forms */
+#forms input {
+	vertical-align: middle;
+	padding: 0;
+	margin: 0 0 5px 0;
+}
+
+#forms select {
+	vertical-align: middle;
+	padding: 0;
+	margin: 0 0 3px 0;
+}
+
+#forms textarea {
+	margin: 0 0 10px 0;
+	width: 100%;
+}
+
+#forms p {
+	margin-top: 7px;
 }
