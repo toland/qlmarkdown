@@ -25,6 +25,8 @@
 					<string>markdown</string>
 					<string>mdown</string>
 					<string>md</string>
+					<string>mdml</string>
+					<string>text</string>
 				</array>
 			</dict>
 		</dict>
