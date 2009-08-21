@@ -1,5 +1,7 @@
 .DS_Store
 build
+QLMarkdown-*.zip
+QLMarkdown/*
 *.xcodeproj/*.pbxuser
 *.xcodeproj/*.mode1v3
 *.xcodeproj/*.mode2v3
