@@ -15,7 +15,6 @@
             <string>public.text.icns</string>
             <key>UTTypeConformsTo</key>
             <array>
-				<string>public.text</string>
 				<string>public.plain-text</string>
 			</array>
 			<key>UTTypeTagSpecification</key>
@@ -41,6 +40,7 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>net.daringfireball.markdown</string>
+				<string>org.vim.markdown-file</string>
 			</array>
 		</dict>
 	</array>
