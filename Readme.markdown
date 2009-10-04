@@ -41,6 +41,12 @@ the file `discount/COPYRIGHT` for more information.
 Version History
 ---------------
 
+Version 1.2 - Oct 4, 2009
+
+* Work around a conflict with MacVim (thanks to godDLL)
+* Support for .mdml extension (alanhogan)
+* CSS that mimics Apple's ADC styling (jiho)
+
 Version 1.1 - Feb 11, 2009
 
 * Adding a little bit of CSS styling. (mdk)
