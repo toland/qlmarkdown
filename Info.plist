@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>UTImportedTypeDeclarations</key>
-    <array>
+  <array>
     <dict>
       <key>UTTypeIdentifier</key>
       <string>net.daringfireball.markdown</string>
