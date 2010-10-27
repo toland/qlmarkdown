@@ -26,10 +26,12 @@ Simply copy QLMarkdown.qlgenerator to ~/Library/QuickLook or /Library/QuickLook.
 To uninstall, drag QLMarkdown into the trash.
 
 
-Source Code
------------
+Downloads
+---------
 
 Source code is available at <http://github.com/toland/qlmarkdown>.
+
+You can download a binary release from <http://github.com/toland/qlmarkdown/archives/master>.
 
 
 License
@@ -37,6 +39,7 @@ License
 
 The QLMarkdown code is distributed under the same terms as [Discount][Discount]. See
 the file `discount/COPYRIGHT` for more information.
+
 
 Version History
 ---------------
