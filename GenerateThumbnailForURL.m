@@ -29,7 +29,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
                             NSMakeSize((maxSize.width * (600.0/800.0)), 
                                        maxSize.height));
 
-        WebView* webView = [[WebView alloc] initWithFrame: viewRect];
+        WebView* webView = [[[WebView alloc] initWithFrame: viewRect] autorelease];
 		[webView scaleUnitSquareToSize: scaleSize];
         [[[webView mainFrame] frameView] setAllowsScrolling:NO];
         [[webView mainFrame] loadData: data
