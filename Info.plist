@@ -27,6 +27,8 @@
           <string>mdml</string>
           <string>text</string>
           <string>mdwn</string>
+          <string>mkd</string>
+          <string>mmd</string>
         </array>
       </dict>
     </dict>
