@@ -25,8 +25,8 @@
 		4446D0000F41899C00BAC3F4 /* mkdio.h in Headers */ = {isa = PBXBuildFile; fileRef = 4446CFED0F41899C00BAC3F4 /* mkdio.h */; };
 		4446D0020F41899C00BAC3F4 /* resource.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFEF0F41899C00BAC3F4 /* resource.c */; };
 		4446D0030F41899C00BAC3F4 /* toc.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFF00F41899C00BAC3F4 /* toc.c */; };
-		4446D0050F41899C00BAC3F4 /* wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFF20F41899C00BAC3F4 /* wrapper.c */; };
-		4446D0060F41899C00BAC3F4 /* wrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4446CFF30F41899C00BAC3F4 /* wrapper.h */; };
+		4446D0050F41899C00BAC3F4 /* discount-wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFF20F41899C00BAC3F4 /* discount-wrapper.c */; };
+		4446D0060F41899C00BAC3F4 /* discount-wrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4446CFF30F41899C00BAC3F4 /* discount-wrapper.h */; };
 		4446D0070F41899C00BAC3F4 /* xmlpage.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFF40F41899C00BAC3F4 /* xmlpage.c */; };
 		4446D0240F41AD4700BAC3F4 /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = 4446D0230F41AD4700BAC3F4 /* styles.css */; };
 		61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */; };
@@ -60,8 +60,8 @@
 		4446CFED0F41899C00BAC3F4 /* mkdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mkdio.h; sourceTree = "<group>"; };
 		4446CFEF0F41899C00BAC3F4 /* resource.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = resource.c; sourceTree = "<group>"; };
 		4446CFF00F41899C00BAC3F4 /* toc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = toc.c; sourceTree = "<group>"; };
-		4446CFF20F41899C00BAC3F4 /* wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrapper.c; sourceTree = "<group>"; };
-		4446CFF30F41899C00BAC3F4 /* wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wrapper.h; sourceTree = "<group>"; };
+		4446CFF20F41899C00BAC3F4 /* discount-wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "discount-wrapper.c"; sourceTree = "<group>"; };
+		4446CFF30F41899C00BAC3F4 /* discount-wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "discount-wrapper.h"; sourceTree = "<group>"; };
 		4446CFF40F41899C00BAC3F4 /* xmlpage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xmlpage.c; sourceTree = "<group>"; };
 		4446D0230F41AD4700BAC3F4 /* styles.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
 		61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
@@ -127,6 +127,8 @@
 		08FB77AFFE84173DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				4446CFF20F41899C00BAC3F4 /* discount-wrapper.c */,
+				4446CFF30F41899C00BAC3F4 /* discount-wrapper.h */,
 				61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */,
 				2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */,
 				08FB77B6FE84183AC02AAC07 /* main.c */,
@@ -160,8 +162,6 @@
 				4446CFED0F41899C00BAC3F4 /* mkdio.h */,
 				4446CFEF0F41899C00BAC3F4 /* resource.c */,
 				4446CFF00F41899C00BAC3F4 /* toc.c */,
-				4446CFF20F41899C00BAC3F4 /* wrapper.c */,
-				4446CFF30F41899C00BAC3F4 /* wrapper.h */,
 				4446CFF40F41899C00BAC3F4 /* xmlpage.c */,
 			);
 			path = discount;
@@ -180,7 +180,7 @@
 				4446CFF90F41899C00BAC3F4 /* cstring.h in Headers */,
 				4446CFFE0F41899C00BAC3F4 /* markdown.h in Headers */,
 				4446D0000F41899C00BAC3F4 /* mkdio.h in Headers */,
-				4446D0060F41899C00BAC3F4 /* wrapper.h in Headers */,
+				4446D0060F41899C00BAC3F4 /* discount-wrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +270,7 @@
 				4446CFFF0F41899C00BAC3F4 /* mkdio.c in Sources */,
 				4446D0020F41899C00BAC3F4 /* resource.c in Sources */,
 				4446D0030F41899C00BAC3F4 /* toc.c in Sources */,
-				4446D0050F41899C00BAC3F4 /* wrapper.c in Sources */,
+				4446D0050F41899C00BAC3F4 /* discount-wrapper.c in Sources */,
 				4446D0070F41899C00BAC3F4 /* xmlpage.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

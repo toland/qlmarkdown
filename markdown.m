@@ -1,5 +1,5 @@
 #include "markdown.h"
-#include "discount/wrapper.h"
+#include "discount-wrapper.h"
 
 NSData* renderMarkdown(NSURL* url)
 {
