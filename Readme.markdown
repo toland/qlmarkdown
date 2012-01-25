@@ -14,6 +14,8 @@ QLMarkdown is a simple QuickLook generator for Markdown files. It renders a
 preview of the selected Markdown file using [Discount][Discount] -- a C implementation of 
 John Gruber's Markdown.pl script.
 
+To update to the latest version of discount run `./discount-config/update-discount.sh`
+
 For more information on Markdown see 
 <http://daringfireball.net/projects/markdown/>.
 
