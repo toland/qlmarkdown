@@ -357,6 +357,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = "";
+				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
 		};
@@ -369,6 +370,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = "";
+				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;
 		};
