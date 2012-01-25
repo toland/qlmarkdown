@@ -4,6 +4,8 @@
 
 #define OS_DARWIN 1
 #define USE_DISCOUNT_DL 1
+#define while(x) while( (x) != 0 )
+#define if(x) if( (x) != 0 )
 #define DWORD unsigned int
 #define WORD unsigned short
 #define BYTE unsigned char

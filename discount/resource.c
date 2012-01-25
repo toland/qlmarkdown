@@ -55,6 +55,17 @@ ___mkd_freeParagraph(Paragraph *p)
 }
 
 
+/* bye bye footnote.
+ */
+void
+___mkd_freefootnote(Footnote *f)
+{
+    DELETE(f->tag);
+    DELETE(f->link);
+    DELETE(f->title);
+}
+
+
 /* bye bye footnotes.
  */
 void
@@ -63,11 +74,8 @@ ___mkd_freefootnotes(MMIOT *f)
     int i;
 
     if ( f->footnotes ) {
-	for (i=0; i < S(*f->footnotes); i++) {
-	    DELETE(T(*f->footnotes)[i].tag);
-	    DELETE(T(*f->footnotes)[i].link);
-	    DELETE(T(*f->footnotes)[i].title);
-	}
+	for (i=0; i < S(*f->footnotes); i++)
+	    ___mkd_freefootnote( &T(*f->footnotes)[i] );
 	DELETE(*f->footnotes);
 	free(f->footnotes);
     }
@@ -132,38 +140,18 @@ ___mkd_freeLineRange(Line *anchor, Line *stop)
 void
 mkd_cleanup(Document *doc)
 {
-    if ( doc ) {
+    if ( doc && (doc->magic == VALID_DOCUMENT) ) {
 	if ( doc->ctx ) {
 	    ___mkd_freemmiot(doc->ctx, 0);
 	    free(doc->ctx);
 	}
 
 	if ( doc->code) ___mkd_freeParagraph(doc->code);
-	if ( doc->headers ) ___mkd_freeLines(doc->headers);
+	if ( doc->title) ___mkd_freeLine(doc->title);
+	if ( doc->author) ___mkd_freeLine(doc->author);
+	if ( doc->date) ___mkd_freeLine(doc->date);
 	if ( T(doc->content) ) ___mkd_freeLines(T(doc->content));
 	memset(doc, 0, sizeof doc[0]);
 	free(doc);
-    }
-}
-
-
-/* write output in XML format
- */
-void
-___mkd_xml(char *p, int size, FILE *out)
-{
-    char c;
-
-    while ( size-- > 0 ) {
-	if ( !isascii(c = *p++) )
-	    continue;
-	switch (c) {
-	case '<': fputs("&lt;", out);   break;
-	case '>': fputs("&gt;", out);   break;
-	case '&': fputs("&amp;", out);  break;
-	case '"': fputs("&quot;", out); break;
-	case '\'':fputs("&apos;", out); break;
-	default:  putc(c,out);          break;
-	}
     }
 }
