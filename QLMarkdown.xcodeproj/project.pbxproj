@@ -38,6 +38,7 @@
 		AB40554514D008B3009A583A /* mkdio.h in Headers */ = {isa = PBXBuildFile; fileRef = AB40554014D008B3009A583A /* mkdio.h */; };
 		AB40554614D008B3009A583A /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = AB40554114D008B3009A583A /* README.markdown */; };
 		AB40554714D008B3009A583A /* update.sh in Resources */ = {isa = PBXBuildFile; fileRef = AB40554214D008B3009A583A /* update.sh */; };
+		AB40554A14D00A6A009A583A /* update-discount.sh in Resources */ = {isa = PBXBuildFile; fileRef = AB40554914D00A6A009A583A /* update-discount.sh */; };
 		C86B05270671AA6E00DD9006 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86B05260671AA6E00DD9006 /* CoreServices.framework */; };
 		F28CFBFD0A3EC0AF000ABFF5 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CFBFC0A3EC0AF000ABFF5 /* ApplicationServices.framework */; };
 		F28CFC030A3EC0C6000ABFF5 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */; };
@@ -77,6 +78,7 @@
 		AB40554014D008B3009A583A /* mkdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mkdio.h; sourceTree = "<group>"; };
 		AB40554114D008B3009A583A /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		AB40554214D008B3009A583A /* update.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = update.sh; sourceTree = "<group>"; };
+		AB40554914D00A6A009A583A /* update-discount.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "update-discount.sh"; sourceTree = "<group>"; };
 		C86B05260671AA6E00DD9006 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		F28CFBFC0A3EC0AF000ABFF5 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = /System/Library/Frameworks/QuickLook.framework; sourceTree = "<absolute>"; };
@@ -186,6 +188,7 @@
 				AB40554014D008B3009A583A /* mkdio.h */,
 				AB40554114D008B3009A583A /* README.markdown */,
 				AB40554214D008B3009A583A /* update.sh */,
+				AB40554914D00A6A009A583A /* update-discount.sh */,
 			);
 			path = "discount-config";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				AB40554314D008B3009A583A /* blocktags in Resources */,
 				AB40554614D008B3009A583A /* README.markdown in Resources */,
 				AB40554714D008B3009A583A /* update.sh in Resources */,
+				AB40554A14D00A6A009A583A /* update-discount.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
