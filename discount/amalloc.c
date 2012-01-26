@@ -100,7 +100,7 @@ adump()
 
     for ( p = list.next; p && (p != &list); p = p->next ) {
 	fprintf(stderr, "allocated: %d byte%s\n", p->size, (p->size==1) ? "" : "s");
-	fprintf(stderr, "           [%.*s]\n", p->size, p+1);
+	fprintf(stderr, "           [%.*s]\n", p->size, (char*)(p+1));
     }
 
     if ( getenv("AMALLOC_STATISTICS") ) {

@@ -32,17 +32,16 @@ mkd_xhtmlpage(Document *p, int flags, FILE *out)
 	fprintf(out, "<head>\n");
 	if ( title = mkd_doc_title(p) )
 	    fprintf(out, "<title>%s</title>\n", title);
-	mkd_style(p, out);
+	mkd_generatecss(p, out);
 	fprintf(out, "</head>\n");
 	
 	fprintf(out, "<body>\n");
 	mkd_generatehtml(p, out);
 	fprintf(out, "</body>\n");
+	fprintf(out, "</html>\n");
 	
 	mkd_cleanup(p);
 
-	fprintf(out, "</html>\n");
-	
 	return 0;
     }
     return -1;

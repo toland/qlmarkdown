@@ -30,7 +30,10 @@ Pptype(int typ)
     case OL        : return "ol";
     case LISTITEM  : return "item";
     case HDR       : return "header";
-    case HR        : return "HR";
+    case HR        : return "hr";
+    case TABLE     : return "table";
+    case SOURCE    : return "source";
+    case STYLE     : return "style";
     default        : return "mystery node!";
     }
 }
@@ -106,7 +109,9 @@ dumptree(Paragraph *pp, Stack *sp, FILE *f)
 	printpfx(sp, f);
 
 	d = fprintf(f, "[%s", Pptype(pp->typ));
-	if ( pp->align )
+	if ( pp->ident )
+	    d += fprintf(f, " %s", pp->ident);
+	if ( pp->align > 1 )
 	    d += fprintf(f, ", <%s>", Begin[pp->align]);
 
 	for (count=0, p=pp->text; p; ++count, (p = p->next) )
