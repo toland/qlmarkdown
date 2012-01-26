@@ -45,6 +45,9 @@ the file `discount/COPYRIGHT` for more information.
 
 Version History
 ---------------
+Version 1.3 - Jan 26, 2012
+
+* Major update of discount markdown engine
 
 Version 1.2 - Oct 4, 2009
 
