@@ -14,13 +14,19 @@
 #include "markdown.h"
 #include "amalloc.h"
 
-#define afterdle(t)	(T((t)->text) + (t)->dle)
+static char *
+onlyifset(Line *l)
+{
+    char *ret = T(l->text) + l->dle;
+
+    return ret[0] ? ret : 0;
+}
 
 char *
 mkd_doc_title(Document *doc)
 {
-    if ( doc && doc->headers )
-	return afterdle(doc->headers);
+    if ( doc && doc->title )
+	return onlyifset(doc->title);
     return 0;
 }
 
@@ -28,8 +34,8 @@ mkd_doc_title(Document *doc)
 char *
 mkd_doc_author(Document *doc)
 {
-    if ( doc && doc->headers && doc->headers->next )
-	return afterdle(doc->headers->next);
+    if ( doc && doc->author )
+	return onlyifset(doc->author);
     return 0;
 }
 
@@ -37,7 +43,7 @@ mkd_doc_author(Document *doc)
 char *
 mkd_doc_date(Document *doc)
 {
-    if ( doc && doc->headers && doc->headers->next && doc->headers->next->next )
-	return afterdle(doc->headers->next->next);
+    if ( doc && doc->date )
+	return onlyifset(doc->date);
     return 0;
 }

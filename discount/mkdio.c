@@ -24,15 +24,18 @@ new_Document()
     Document *ret = calloc(sizeof(Document), 1);
 
     if ( ret ) {
-	if (( ret->ctx = calloc(sizeof(MMIOT), 1) ))
+	if ( ret->ctx = calloc(sizeof(MMIOT), 1) ) {
+	    ret->magic = VALID_DOCUMENT;
 	    return ret;
+	}
 	free(ret);
     }
     return 0;
 }
 
 
-/* add a line to the markdown input chain
+/* add a line to the markdown input chain, expanding tabs and
+ * noting the presence of special characters as we go.
  */
 static void
 queue(Document* a, Cstring *line)
@@ -58,6 +61,8 @@ queue(Document* a, Cstring *line)
 	    } while ( ++xp % a->tabstop );
 	}
 	else if ( c >= ' ' ) {
+	    if ( c == '|' )
+		p->flags |= PIPECHAR;
 	    EXPAND(p->text) = c;
 	    ++xp;
 	}
@@ -68,16 +73,14 @@ queue(Document* a, Cstring *line)
 }
 
 
-#ifdef PANDOC_HEADER
 /* trim leading blanks from a header line
  */
 static void
-snip(Line *p)
+header_dle(Line *p)
 {
     CLIP(p->text, 0, 1);
     p->dle = mkd_firstnonblank(p);
 }
-#endif
 
 
 /* build a Document from any old input.
@@ -90,30 +93,26 @@ populate(getc_func getc, void* ctx, int flags)
     Cstring line;
     Document *a = new_Document();
     int c;
-#ifdef PANDOC_HEADER
     int pandoc = 0;
-#endif
 
     if ( !a ) return 0;
 
-    a->tabstop = (flags & STD_TABSTOP) ? 4 : TABSTOP;
+    a->tabstop = (flags & MKD_TABSTOP) ? 4 : TABSTOP;
 
     CREATE(line);
 
     while ( (c = (*getc)(ctx)) != EOF ) {
 	if ( c == '\n' ) {
-#ifdef PANDOC_HEADER
 	    if ( pandoc != EOF && pandoc < 3 ) {
 		if ( S(line) && (T(line)[0] == '%') )
 		    pandoc++;
 		else
 		    pandoc = EOF;
 	    }
-#endif
 	    queue(a, &line);
 	    S(line) = 0;
 	}
-	else
+	else if ( isprint(c) || isspace(c) || (c & 0x80) )
 	    EXPAND(line) = c;
     }
 
@@ -122,20 +121,19 @@ populate(getc_func getc, void* ctx, int flags)
 
     DELETE(line);
 
-#ifdef PANDOC_HEADER
-    if ( (pandoc == 3) && !(flags & NO_HEADER) ) {
+    if ( (pandoc == 3) && !(flags & (MKD_NOHEADER|MKD_STRICT)) ) {
 	/* the first three lines started with %, so we have a header.
 	 * clip the first three lines out of content and hang them
 	 * off header.
 	 */
-	a->headers = T(a->content);
-	T(a->content) = a->headers->next->next->next;
-	a->headers->next->next->next = 0;
-	snip(a->headers);
-	snip(a->headers->next);
-	snip(a->headers->next->next);
+	Line *headers = T(a->content);
+
+	a->title = headers;             header_dle(a->title);
+	a->author= headers->next;       header_dle(a->author);
+	a->date  = headers->next->next; header_dle(a->date);
+
+	T(a->content) = headers->next->next->next;
     }
-#endif
 
     return a;
 }
@@ -144,7 +142,7 @@ populate(getc_func getc, void* ctx, int flags)
 /* convert a file into a linked list
  */
 Document *
-mkd_in(FILE *f, int flags)
+mkd_in(FILE *f, DWORD flags)
 {
     return populate((getc_func)fgetc, f, flags & INPUT_MASK);
 }
@@ -153,7 +151,7 @@ mkd_in(FILE *f, int flags)
 /* return a single character out of a buffer
  */
 struct string_ctx {
-    char *data;		/* the unread data */
+    const char *data;	/* the unread data */
     int   size;		/* and how much is there? */
 } ;
 
@@ -172,7 +170,7 @@ strget(struct string_ctx *in)
 /* convert a block of text into a linked list
  */
 Document *
-mkd_string(char *buf, int len, int flags)
+mkd_string(const char *buf, int len, DWORD flags)
 {
     struct string_ctx about;
 
@@ -192,8 +190,8 @@ mkd_generatehtml(Document *p, FILE *output)
     int szdoc;
 
     if ( (szdoc = mkd_document(p, &doc)) != EOF ) {
-	if ( p->ctx->flags & CDATA_OUTPUT )
-	    ___mkd_xml(doc, szdoc, output);
+	if ( p->ctx->flags & MKD_CDATA )
+	    mkd_generatexml(doc, szdoc, output);
 	else
 	    fwrite(doc, szdoc, 1, output);
 	putc('\n', output);
@@ -217,25 +215,143 @@ markdown(Document *document, FILE *out, int flags)
 }
 
 
-void
-mkd_basename(Document *document, char *base)
-{
-    if ( document )
-	document->base = base;
-}
-
-
 /* write out a Cstring, mangled into a form suitable for `<a href=` or `<a id=`
  */
 void
-mkd_string_to_anchor(char *s, int len, void(*outchar)(int,void*), void *out)
+mkd_string_to_anchor(char *s, int len, mkd_sta_function_t outchar,
+				       void *out, int labelformat)
 {
-    for ( ; len-- > 0; ++s ) {
-	if ( *s == ' ' || *s == '&' || *s == '<' || *s == '"' )
-	    (*outchar)('+', out);
-	else if ( isalnum(*s) || ispunct(*s) )
-	    (*outchar)(*s, out);
+    unsigned char c;
+
+    int i, size;
+    char *line;
+
+    size = mkd_line(s, len, &line, IS_LABEL);
+    
+    if ( labelformat && (size>0) && !isalpha(line[0]) )
+	(*outchar)('L',out);
+    for ( i=0; i < size ; i++ ) {
+	c = line[i];
+	if ( labelformat ) {
+	    if ( isalnum(c) || (c == '_') || (c == ':') || (c == '-') || (c == '.' ) )
+		(*outchar)(c, out);
+	    else
+		(*outchar)('.', out);
+	}
 	else
-	    (*outchar)('~',out);
+	    (*outchar)(c,out);
     }
+	
+    if (line)
+	free(line);
+}
+
+
+/*  ___mkd_reparse() a line
+ */
+static void
+mkd_parse_line(char *bfr, int size, MMIOT *f, int flags)
+{
+    ___mkd_initmmiot(f, 0);
+    f->flags = flags & USER_FLAGS;
+    ___mkd_reparse(bfr, size, 0, f, 0);
+    ___mkd_emblock(f);
+}
+
+
+/* ___mkd_reparse() a line, returning it in malloc()ed memory
+ */
+int
+mkd_line(char *bfr, int size, char **res, DWORD flags)
+{
+    MMIOT f;
+    int len;
+    
+    mkd_parse_line(bfr, size, &f, flags);
+
+    if ( len = S(f.out) ) {
+	/* kludge alert;  we know that T(f.out) is malloced memory,
+	 * so we can just steal it away.   This is awful -- there
+	 * should be an opaque method that transparently moves 
+	 * the pointer out of the embedded Cstring.
+	 */
+	EXPAND(f.out) = 0;
+	*res = T(f.out);
+	T(f.out) = 0;
+	S(f.out) = ALLOCATED(f.out) = 0;
+    }
+    else {
+	 *res = 0;
+	 len = EOF;
+     }
+    ___mkd_freemmiot(&f, 0);
+    return len;
+}
+
+
+/* ___mkd_reparse() a line, writing it to a FILE
+ */
+int
+mkd_generateline(char *bfr, int size, FILE *output, DWORD flags)
+{
+    MMIOT f;
+
+    mkd_parse_line(bfr, size, &f, flags);
+    if ( flags & MKD_CDATA )
+	mkd_generatexml(T(f.out), S(f.out), output);
+    else
+	fwrite(T(f.out), S(f.out), 1, output);
+
+    ___mkd_freemmiot(&f, 0);
+    return 0;
+}
+
+
+/* set the url display callback
+ */
+void
+mkd_e_url(Document *f, mkd_callback_t edit)
+{
+    if ( f )
+	f->cb.e_url = edit;
+}
+
+
+/* set the url options callback
+ */
+void
+mkd_e_flags(Document *f, mkd_callback_t edit)
+{
+    if ( f )
+	f->cb.e_flags = edit;
+}
+
+
+/* set the url display/options deallocator
+ */
+void
+mkd_e_free(Document *f, mkd_free_t dealloc)
+{
+    if ( f )
+	f->cb.e_free = dealloc;
+}
+
+
+/* set the url display/options context data field
+ */
+void
+mkd_e_data(Document *f, void *data)
+{
+    if ( f )
+	f->cb.e_data = data;
+}
+
+
+/* set the href prefix for markdown extra style footnotes
+ */
+void
+mkd_ref_prefix(Document *f, char *data)
+{
+    if ( f )
+	f->ref_prefix = data;
 }

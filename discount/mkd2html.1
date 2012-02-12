@@ -1,0 +1,52 @@
+.\"     %A%
+.\"
+.Dd January 10, 2010
+.Dt MKD2HTML 1
+.Os MASTODON
+.Sh NAME
+.Nm mkd2html
+.Nd markdown to html converter
+.Sh SYNOPSIS
+.Nm
+.Op Fl css Pa file
+.Op Fl header Pa string
+.Op Fl footer Pa string
+.Op Pa file
+.Sh DESCRIPTION
+.Nm
+utility parses a
+.Xr markdown 7 Ns -formatted
+.Pa textfile
+.Pq or stdin if not specified,
+and generates a web page. It
+reads
+.Ar file
+or
+.Ar file.text
+ and writes the result in
+.Ar file.html
+.Pq where file is the passed argument.
+.Pp
+.Nm
+is part of discount.
+.Sh OPTIONS
+.Bl -tag -width "-header string"
+.It Fl css Ar file
+Specifies a CSS file.
+.It Fl header Ar string
+Specifies a line to add to the <header> tag.
+.It Fl footer Ar string
+Specifies a line to add before the <\/body> tag.
+.El
+.Sh RETURN VALUES
+The
+.Nm
+utility exits 0 on success, and >0 if an error occurs.
+.Sh SEE ALSO
+.Xr markdown 1 ,
+.Xr markdown 3 ,
+.Xr markdown 7 ,
+.Xr mkd-extensions 7 .
+.Sh AUTHOR
+.An David Parsons
+.Pq Li orc@pell.chi.il.us

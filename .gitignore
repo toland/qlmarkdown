@@ -1,7 +1,22 @@
-.DS_Store
 build
 QLMarkdown-*.zip
 QLMarkdown/*
 *.xcodeproj/*.pbxuser
 *.xcodeproj/*.mode1v3
 *.xcodeproj/*.mode2v3
+
+# xcode noise
+*.pbxuser
+*.mode1v3
+
+# xcode 4 user noise
+*.xcworkspace
+xcuserdata
+*.perspectivev3
+
+# old skool
+.svn
+
+# osx noise
+.DS_Store
+profile

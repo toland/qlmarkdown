@@ -1,0 +1,45 @@
+.\"     %A%
+.\"
+.Dd January 10, 2010
+.Dt MAKEPAGE 1
+.Os MASTODON
+.Sh NAME
+.Nm makepage
+.Nd convert markdown input to a fully-formed xhtml page
+.Sh SYNOPSIS
+.Nm
+.Op Fl V
+.Op Fl F Pa bitmap
+.Op Fl f Ar flags
+.Op Pa file
+.Sh DESCRIPTION
+The
+.Nm
+utility parses a
+.Xr markdown 7 Ns -formatted
+.Pa textfile
+.Pq or stdin if not specified,
+compiles it, then prints a fully-formed xhtml page to stdout.
+.Pp
+The 
+.Fl F ,
+.Fl f , 
+and
+.Fl V
+flags are identical to the same options in 
+.Xr markdown 1 .
+.Pp
+.Nm
+is part of discount.
+.Sh RETURN VALUES
+The
+.Nm
+utility exits 0 on success, and >0 if an error occurs.
+.Sh SEE ALSO
+.Xr markdown 1 ,
+.Xr markdown 3 ,
+.Xr markdown 7 ,
+.Xr mkd-extensions 7 .
+.Sh AUTHOR
+.An David Parsons
+.Pq Li orc@pell.chi.il.us
