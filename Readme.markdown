@@ -23,7 +23,9 @@ For more information on Markdown see
 Installation
 ------------
 
-Simply copy QLMarkdown.qlgenerator to ~/Library/QuickLook or /Library/QuickLook.
+Simply copy QLMarkdown.qlgenerator to `~/Library/QuickLook` or `/Library/QuickLook`.
+
+If the newly installed plugin is not picked up instantly, you run `qlmanage -r` in a terminal to refresh.
 
 To uninstall, drag QLMarkdown into the trash.
 
