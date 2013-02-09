@@ -12,6 +12,7 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>net.daringfireball.markdown</string>
+				<string>net.multimarkdown.text</string>
 				<string>org.vim.markdown-file</string>
 			</array>
 		</dict>
