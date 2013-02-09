@@ -78,6 +78,7 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
+					<string>multimarkdown</string>
 					<string>markdown</string>
 					<string>mdown</string>
 					<string>md</string>
