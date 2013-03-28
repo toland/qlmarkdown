@@ -1,220 +1,143 @@
-/* Extracted and interpreted from adcstyle.css and frameset_styles.css */
-
-/* body */
-body {
-	margin: 20px 40px;
-	background-color: #fff;
-	color: #000;
-	font: 13px "Myriad Pro", "Lucida Grande", Lucida, Verdana, sans-serif;
+html, body {
+	font-size: 14px;
+	font-family: NanumGothic, 'Malgun Gothic', Arial, Helvetica, sans-serif;
+	line-height: 130%;
 }
 
-/* links */
-a:link {
-	color: #00f;
-	text-decoration: none;
+/**************************************************************************
+ * Code
+ **************************************************************************/
+code, pre code {
+	font-family: Consolas, Monaco, Andale Mono, Courier New, monospace, NanumGothic, 'Malgun Gothic', Arial, Helvetica, sans-serif;
 }
-
-a:visited {
-	color: #00a;
-	text-decoration: none;
+code {
+	background-color: #fee9cc;
+	color: rgba(0, 0, 0, 0.75);
+	padding: 1px 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
-
-a:hover {
-	color: #f60;
-	text-decoration: underline;
-}
-	
-a:active {
-	color: #f60;
-	text-decoration: underline;
-}
-
-
-/* html tags */
-
-/*  Work around IE/Win code size bug - courtesy Jesper, waffle.wootest.net  */
-
-* html code	{
-	font-size: 101%;
-}
-
-* html pre {
-	font-size: 101%;
-}
-
-/* code */
-
-pre, code {
-	font-size: 11px; font-family: monaco, courier, consolas, monospace;
-}
-
 pre {
-	margin-top: 5px;
-	margin-bottom: 10px;
-	border: 1px solid #c7cfd5;
-	background: #f1f5f9;
-	margin: 20px 0;
-	padding: 8px;
-	text-align: left;
+	display: block;
+	padding: 14px;
+	margin: 0 0 18px;
+	border: 1px solid #d9d9d9;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+pre code {
+	background-color: #fff;
+	color: #737373;
+	padding: 0;
 }
 
-hr {
-	color: #919699;
-	size: 1;
-	width: 100%;
-	noshade: "noshade";
-}
+/**************************************************************************
+ * Markdown
+ **************************************************************************/
 
-/* headers */
-
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Myriad Pro", "Lucida Grande", Lucida, Verdana, sans-serif;
-	font-weight: bold;
+h1, h2, h3, h4, h5, h6, p, blockquote {
+	margin: 0;
+	padding: 0;
 }
-
-h1	{
-	margin-top: 1em;
-	margin-bottom: 25px;
-	color: #000;
-	font-weight: bold;
-	font-size: 30px;
-}
-h2	{
-	margin-top: 2.5em;
-	font-size: 24px;
-	color: #000;
-	padding-bottom: 2px;
-	border-bottom: 1px solid #919699;
-}
-h3	{
-	margin-top: 2em;
-	margin-bottom: .5em;
-	font-size: 17px;
-	color: #000;
-}
-h4	{
-	margin-top: 2em;
-	margin-bottom: .5em;
-	font-size: 15px;
-	color: #000;
-}
-h5	{
-	margin-top: 20px;
-	margin-bottom: .5em;
-    padding: 0;
-	font-size: 13px;
-	color: #000;
-}
-
-h6	{
-	margin-top: 20px;
-	margin-bottom: .5em;
-    padding: 0;
-	font-size: 11px;
-	color: #000;
-}
-
-p {
-    margin-top: 0px;
-    margin-bottom: 10px;
-}
-
-/* lists */
-
-ul	{
-	list-style: square outside;
-	margin: 0 0 0 30px;
-	padding: 0 0 12px 6px;
-}
-
-li	{
-	margin-top: 7px;
-}
-	        
-ol {
-	list-style-type: decimal;
-	list-style-position: outside;
-	margin: 0 0 0 30px;
-	padding: 0 0 12px 6px;
-}
-	
-ol ol {
-	list-style-type: lower-alpha;
-    list-style-position: outside;
-	margin: 7px 0 0 30px;
-	padding: 0 0 0 10px;
-    }
-
-ul ul {
-	margin-left: 40px;
-	padding: 0 0 0 6px;
-}
-
-li>p { display: inline }
-li>p+p { display: block }
-li>a+p { display: block }
-
-
-/* table */
 
 table {
-	border-top: 1px solid #919699;
-	border-left: 1px solid #919699;
-	border-spacing: 0;
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
 }
-	
-table th {
-	padding: 4px 8px 4px 8px;
-	background: #E2E2E2;
-	font-size: 12px;
-	border-bottom: 1px solid #919699;
-	border-right: 1px solid #919699;
+td, th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
 }
-table th p {
-	font-weight: bold;
-	margin-bottom: 0px; 
-}
-	
-table td {
-	padding: 8px;
-	font-size: 12px;
-	vertical-align: top;
-	border-bottom: 1px solid #919699;
-	border-right: 1px solid #919699;
-}
-table td p {
-	margin-bottom: 0px; 
-}
-table td p + p  {
-	margin-top: 5px; 
-}
-table td p + p + p {
-	margin-top: 5px; 
+th {
+	padding: 5px 10px;
+	background-color: #f7fcfe;
 }
 
-/* forms */
-
-form {
-	margin: 0;
+a {
+	color: #0069d6;
+}
+a:hover {
+	color: #0050a3;
+	text-decoration: none;
+}
+a img {
+	border: none;
+}
+p {
+	margin-bottom: 9px;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #404040;
+	line-height: 36px;
+	padding-top: 15px;
+}
+h1 {
+	margin-bottom: 18px;
+	font-size: 30px;
+	border-bottom: 2px solid #000000;
+	padding-bottom: 4px;
+}
+h2 {
+	font-size: 24px;
+}
+h3 {
+	font-size: 18px;
+}
+h4 {
+	font-size: 16px;
+}
+h5 {
+	font-size: 14px;
+}
+h6 {
+	font-size: 13px;
+}
+hr {
+	margin: 0 0 19px;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+}
+blockquote {
+	padding: 13px 13px 21px 15px;
+	margin-bottom: 18px;
+	font-family: georgia, serif;
+	font-style: italic;
+}
+blockquote:before {
+	content: "\201C";
+	font-size: 40px;
+	margin-left: -10px;
+	font-family: georgia, serif;
+	color: #eee;
+}
+blockquote p {
+	font-size: 14px;
+	font-weight: 300;
+	margin-bottom: 0;
+	font-style: italic;
+}
+del {
+	opacity: .4;
+}
+img {
+	max-width: 100%;
 }
 
-button {
-	margin: 3px 0 10px 0;
-}
-input {
-	vertical-align: middle;
-	padding: 0;
-	margin: 0 0 5px 0;
-}
+/*
+ @media screen and (min-width: 914px) {
+ body {
+ width: 854px;
+ margin:10px auto;
+ }
+ }
+ */
 
-select {
-	vertical-align: middle;
-	padding: 0;
-	margin: 0 0 3px 0;
-}
-
-textarea {
-	margin: 0 0 10px 0;
-	width: 100%;
+@media print {
+	body, code, pre code, h1, h2, h3, h4, h5, h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
 }

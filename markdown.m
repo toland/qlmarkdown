@@ -22,11 +22,11 @@ NSData* renderMarkdown(NSURL* url)
                                                  "<head>"
                                                  "<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />"
                                                  "<style type=\"text/css\">%@</style>"
-                                                 "<base href=\"%@\"/>"
+                                                 "<base href='file:///%@/' />"
                                                  "</head>"
                                                  "<body>%@</body>"
                                                  "</html>", 
-                                                 styles, url, [NSString stringWithUTF8String:output]];
+                                                 styles, [url.path stringByDeletingLastPathComponent], [NSString stringWithUTF8String:output]];
     
     free(output);
     return [html dataUsingEncoding:NSUTF8StringEncoding];
