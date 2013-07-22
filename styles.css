@@ -6,6 +6,9 @@ body {
   background-color: #fff;
   color: #000;
   font: 13px "Myriad Pro", "Lucida Grande", Lucida, Verdana, sans-serif;
+  overflow: auto;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
 }
 
 /* links */
@@ -55,6 +58,8 @@ pre {
   margin: 20px 0;
   padding: 8px;
   text-align: left;
+  overflow: auto;
+  word-wrap: normal;
 }
 
 hr {
