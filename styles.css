@@ -23,7 +23,7 @@ a:hover {
 	color: #f60;
 	text-decoration: underline;
 }
-	
+
 a:active {
 	color: #f60;
 	text-decoration: underline;
@@ -131,14 +131,14 @@ ul	{
 li	{
 	margin-top: 7px;
 }
-	        
+
 ol {
 	list-style-type: decimal;
 	list-style-position: outside;
 	margin: 0 0 0 30px;
 	padding: 0 0 12px 6px;
 }
-	
+
 ol ol {
 	list-style-type: lower-alpha;
     list-style-position: outside;
@@ -163,7 +163,7 @@ table {
 	border-left: 1px solid #919699;
 	border-spacing: 0;
 }
-	
+
 table th {
 	padding: 4px 8px 4px 8px;
 	background: #E2E2E2;
@@ -173,9 +173,9 @@ table th {
 }
 table th p {
 	font-weight: bold;
-	margin-bottom: 0px; 
+	margin-bottom: 0px;
 }
-	
+
 table td {
 	padding: 8px;
 	font-size: 12px;
@@ -184,13 +184,13 @@ table td {
 	border-right: 1px solid #919699;
 }
 table td p {
-	margin-bottom: 0px; 
+	margin-bottom: 0px;
 }
 table td p + p  {
-	margin-top: 5px; 
+	margin-top: 5px;
 }
 table td p + p + p {
-	margin-top: 5px; 
+	margin-top: 5px;
 }
 
 /* forms */
