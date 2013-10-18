@@ -12,7 +12,7 @@ error_msg () {
 status_msg "Running configure.sh..."
 
 cd `dirname $0`/../discount/
-./configure.sh
+./configure.sh --with-fenced-code
 
 # make the blocktags
 make blocktags
