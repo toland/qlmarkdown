@@ -14,6 +14,7 @@
 				<string>net.daringfireball.markdown</string>
 				<string>net.multimarkdown.text</string>
 				<string>org.vim.markdown-file</string>
+				<string>com.unknown.md</string>
 			</array>
 		</dict>
 	</array>
