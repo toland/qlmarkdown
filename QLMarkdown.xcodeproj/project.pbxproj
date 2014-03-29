@@ -210,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CA3261E0896AD4900168862 /* Build configuration list for PBXNativeTarget "QLMarkdown" */;
 			buildPhases = (
+				A35042D718E66E2800ACC093 /* ShellScript */,
 				8D57630E048677EA00EA77CD /* Headers */,
 				8D57630F048677EA00EA77CD /* Resources */,
 				8D576311048677EA00EA77CD /* Sources */,
@@ -232,7 +233,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0510;
 			};
 			buildConfigurationList = 2CA326220896AD4900168862 /* Build configuration list for PBXProject "QLMarkdown" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -276,6 +277,22 @@
 		};
 /* End PBXRezBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A35042D718E66E2800ACC093 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/Volumes/HD2/Users/sammyd/Documents/Projects/qlmarkdown/discount-config/update.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D576311048677EA00EA77CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -316,7 +333,7 @@
 		2CA3261F0896AD4900168862 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -336,7 +353,7 @@
 		2CA326200896AD4900168862 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -356,6 +373,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = "";
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -364,7 +382,6 @@
 		2CA326240896AD4900168862 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "ppc i386 ppc64 x86_64";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
