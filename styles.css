@@ -231,3 +231,8 @@ textarea {
   margin: 0 0 10px 0;
   width: 100%;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
