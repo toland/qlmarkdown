@@ -289,7 +289,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/Volumes/HD2/Users/sammyd/Documents/Projects/qlmarkdown/discount-config/update.sh";
+			shellScript = "$(SRCROOT)/discount-config/update.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 

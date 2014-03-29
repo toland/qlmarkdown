@@ -1,23 +1,31 @@
 #!/bin/bash
 
 status_msg () {
-	echo -e "\033[1m$1\033[0m"
+	if [ -t FD ] ; then
+		echo -e "\033[1m$1\033[0m"
+	else
+		echo "$1"
+	fi
 }
 
 error_msg () {
-	echo -e "\033[31m$1\033[0m" >&2
+	if [ -t FD ] ; then
+		echo -e "\033[31m$1\033[0m" >&2
+	else
+		echo "$1" >&2
+	fi
+
 	tput sgr0
 }
 
-status_msg "Running configure.sh..."
-
 # Checkout the discount module if necessary
-if [ ! -d discount ] ; then 
-	echo Updating the discount directory...
+if [[ ! -a $PWD/discount/configure.sh ]] ; then
+	status_msg "Updating the discount directory..."
 	git submodule update --init
 fi
 
-cd `dirname $0`/../discount/
+status_msg "Running configure.sh..."
+cd discount
 ./configure.sh --with-fenced-code
 
 # make the blocktags
