@@ -288,8 +288,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "$(SRCROOT)/discount-config/update.sh";
+			shellPath = "/bin/sh $(SRCROOT)/discount-config/update.sh";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
