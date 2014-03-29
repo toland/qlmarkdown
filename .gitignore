@@ -8,6 +8,8 @@ QLMarkdown/*
 # xcode noise
 *.pbxuser
 *.mode1v3
+# AppCode metadata
+.idea
 
 # xcode 4 user noise
 *.xcworkspace
