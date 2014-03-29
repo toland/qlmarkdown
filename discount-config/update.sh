@@ -11,6 +11,12 @@ error_msg () {
 
 status_msg "Running configure.sh..."
 
+# Checkout the discount module if necessary
+if [ ! -d discount ] ; then 
+	echo Updating the discount directory...
+	git submodule update --init
+fi
+
 cd `dirname $0`/../discount/
 ./configure.sh --with-fenced-code
 

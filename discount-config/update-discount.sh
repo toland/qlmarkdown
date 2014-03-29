@@ -11,7 +11,4 @@ tput sgr0
 status_msg "Removing discount folder..."
 rm -rf ../discount/
 
-status_msg "Cloning discount ..."
-git clone git://github.com/Orc/discount.git ../discount
-
 ./update.sh
