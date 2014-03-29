@@ -1,0 +1,3 @@
+[submodule "discount"]
+	path = discount
+	url = https://github.com/Orc/discount
