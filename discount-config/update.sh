@@ -18,11 +18,15 @@ error_msg () {
 	tput sgr0
 }
 
+# CD into script dir -1
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"/..
+
 # Checkout the discount module if necessary
 if [[ ! -a $PWD/discount/configure.sh ]] ; then
 	status_msg "Updating the discount directory..."
 	git submodule update --init
 fi
+
 
 status_msg "Running configure.sh..."
 cd discount
