@@ -35,8 +35,8 @@ Downloads
 
 Source code is available at <http://github.com/toland/qlmarkdown>.
 
-You can download a binary release from <http://github.com/toland/qlmarkdown/archives/master>.
-
+You can download the [latest](https://github.com/toland/qlmarkdown/releases/tag/v1.3.1) release from 
+<https://github.com/toland/qlmarkdown/releases>
 
 License
 -------
