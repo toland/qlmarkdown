@@ -29,6 +29,12 @@ If the newly installed plugin is not picked up instantly, you run `qlmanage -r` 
 
 To uninstall, drag QLMarkdown into the trash.
 
+ **Note:** *Quick Look doesn't allow selecting text. If you want to select the text in the markdown preview, you will 
+need to enable text selection in Quick Look by running the following in Terminal:*
+
+````bash
+defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder
+````
 
 Downloads
 ---------
