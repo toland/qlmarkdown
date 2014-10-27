@@ -16,6 +16,7 @@
 				<string>net.multimarkdown.text</string>
 				<string>org.vim.markdown-file</string>
 				<string>com.unknown.md</string>
+				<string>com.foldingtext.FoldingText.document</string>
 				<string>dyn.ah62d4rv4ge8043a</string>
 				<string>dyn.ah62d4rv4ge80445e</string>
 				<string>dyn.ah62d4rv4ge8042pwrrwg875s</string>
@@ -93,6 +94,7 @@
 					<string>mdwn</string>
 					<string>mkd</string>
 					<string>mmd</string>
+					<string>ft</string>
 				</array>
 			</dict>
 		</dict>
