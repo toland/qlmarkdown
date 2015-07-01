@@ -32,7 +32,7 @@ To uninstall, drag QLMarkdown into the trash.
 Another method, if you have `brew cask` :
 
 ```bash
-$ brew cask update
+$ brew update
 $ brew cask install qlmarkdown
 ```
 
