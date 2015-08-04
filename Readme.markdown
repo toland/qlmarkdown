@@ -29,7 +29,7 @@ If the newly installed plugin is not picked up instantly, you run `qlmanage -r` 
 
 To uninstall, drag QLMarkdown into the trash.
 
-Another method, if you have `brew cask` :
+Another method, if you have [Homebrew Cask](http://caskroom.io) installed:
 
 ```bash
 $ brew update
