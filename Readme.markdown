@@ -25,30 +25,29 @@ Installation
 
 Simply copy QLMarkdown.qlgenerator to `~/Library/QuickLook` or `/Library/QuickLook`.
 
-If the newly installed plugin is not picked up instantly, you run `qlmanage -r` in a terminal to refresh.
+If the newly installed plugin is not picked up instantly, you can run `qlmanage -r` in Terminal to refresh.
 
 To uninstall, drag QLMarkdown into the trash.
 
-Another method, if you have [Homebrew Cask](http://caskroom.io) installed:
+Another method, provided you have [Homebrew Cask](http://caskroom.io) installed, you can run the following commands to set things up:
 
-```bash
-$ brew update
-$ brew cask install qlmarkdown
-```
+`$ brew update`
 
-To uninstall
+`$ brew cask install qlmarkdown`
 
-```bash
-$ brew cask uninstall qlmarkdown
-```
+To uninstall:
+
+`$ brew cask uninstall qlmarkdown`
 
 
- **Note:** *Quick Look doesn't allow selecting text. If you want to select the text in the markdown preview, you will 
-need to enable text selection in Quick Look by running the following in Terminal:*
+ **Note:** *QuickLook doesn't allow selecting text by default. If you want to select the text in the markdown preview, you will 
+need to enable text selection in QuickLook by running the following command in Terminal:*
 
-````bash
-defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder
-````
+`defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder`
+
+*This command is only valid on OS X 10.10 and below as Apple has since [removed][] the ability to select text in QuickLook.*
+
+[removed]: http://tidbits.com/article/16254
 
 Downloads
 ---------
@@ -61,8 +60,7 @@ You can download the [latest](https://github.com/toland/qlmarkdown/releases/tag/
 License
 -------
 
-The QLMarkdown code is distributed under the same terms as [Discount][Discount]. See
-the file `discount/COPYRIGHT` for more information.
+The QLMarkdown code is distributed under the same terms as [Discount][Discount]. See the file `discount/COPYRIGHT` for more information.
 
 
 Version History
