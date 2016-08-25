@@ -12,8 +12,6 @@ char* convert_markdown_to_string(const char *str)
     
     if(sz == 0)
         return NULL;
-    else
-        out[sz - 1] = 0;
     
     return out;
 }
