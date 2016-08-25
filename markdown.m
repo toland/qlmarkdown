@@ -5,9 +5,9 @@ NSData* renderMarkdown(NSURL* url)
 {
     @autoreleasepool {
     NSString *styles = [[NSString alloc] initWithContentsOfFile:[[NSBundle bundleWithIdentifier: @"com.fiatdev.QLMarkdown"]
-                                                           pathForResource:@"styles" ofType:@"css"]
-                                                 encoding:NSUTF8StringEncoding
-                                                    error:nil];
+                                                                 pathForResource:@"styles" ofType:@"css"]
+                                                                 encoding:NSUTF8StringEncoding
+                                                                 error:nil];
 
     NSStringEncoding usedEncoding = 0;
     NSError *e = nil;
