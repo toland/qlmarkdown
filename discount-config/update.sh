@@ -30,7 +30,9 @@ fi
 
 status_msg "Running configure.sh..."
 cd discount
-./configure.sh --with-fenced-code
+./configure.sh \
+    --with-dl=both \
+    --with-fenced-code
 
 # make the blocktags
 make blocktags
