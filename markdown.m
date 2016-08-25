@@ -19,11 +19,17 @@ NSData* renderMarkdown(NSURL* url)
     }
 
     char *output = convert_markdown_to_string([source UTF8String]);
-    NSString *html = [NSString stringWithFormat:@"<!DOCTYPE html>"
-                                                 "<meta charset=utf-8>"
-                                                 "<style>%@</style>"
-                                                 "<base href=\"%@\"/>"
-                                                 "%@",
+    NSString *html = [NSString stringWithFormat:@"<!DOCTYPE html>\n"
+                                                 "<html>\n"
+                                                 "<head>\n"
+                                                 "<meta charset=\"utf-8\">\n"
+                                                 "<style>\n%@</style>\n"
+                                                 "<base href=\"%@\"/>\n"
+                                                 "</head>\n"
+                                                 "<body>\n"
+                                                 "%@"
+                                                 "</body>\n"
+                                                 "</html>",
                                                  styles, url, [NSString stringWithUTF8String:output]];
 
     free(output);
