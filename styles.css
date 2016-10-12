@@ -5,7 +5,7 @@ body {
   margin: 20px 40px;
   background-color: #fff;
   color: #000;
-  font: 13px "Myriad Pro", "Lucida Grande", Lucida, Verdana, sans-serif;
+  font: 13px -apple-system, "Helvetica Neue", "Myriad Pro", "Lucida Grande", Lucida, Verdana, sans-serif;
   overflow: auto;
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -73,7 +73,7 @@ hr {
 
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Myriad Pro", "Lucida Grande", Lucida, Verdana, sans-serif;
+  font-family: -apple-system, "Helvetica Neue", "Myriad Pro", "Lucida Grande", Lucida, Verdana, sans-serif;
   font-weight: bold;
 }
 
