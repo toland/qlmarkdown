@@ -29,7 +29,7 @@ If the newly installed plugin is not picked up instantly, you can run `qlmanage 
 
 To uninstall, drag QLMarkdown into the trash.
 
-Another method, provided you have [Homebrew Cask](http://caskroom.io) installed, you can run the following commands to set things up:
+Another method, provided you have [Homebrew Cask](https://caskroom.github.io) installed, you can run the following commands to set things up:
 
 `$ brew update`
 
