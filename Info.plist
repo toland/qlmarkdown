@@ -78,7 +78,7 @@
 			<key>UTTypeIconFile</key>
 			<string>public.text.icns</string>
 			<key>UTTypeIdentifier</key>
-			<string>net.daringfireball.markdown</string>
+			<string>public.text </string>
 			<key>UTTypeReferenceURL</key>
 			<string>http://daringfireball.net/projects/markdown/</string>
 			<key>UTTypeTagSpecification</key>
