@@ -11,6 +11,7 @@
 		0A80BFA70E21A2ED00C8BF14 /* markdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A80BFA60E21A2ED00C8BF14 /* markdown.m */; };
 		0A80BFB20E21A90900C8BF14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A80BFB10E21A90900C8BF14 /* Cocoa.framework */; };
 		0A80BFCC0E21B61A00C8BF14 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A80BFCB0E21B61A00C8BF14 /* WebKit.framework */; };
+		0C8824D11E8FE4F600ED18A5 /* github.css in Resources */ = {isa = PBXBuildFile; fileRef = 0C8824D01E8FE4F600ED18A5 /* github.css */; };
 		2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */; };
 		4446D0050F41899C00BAC3F4 /* discount-wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFF20F41899C00BAC3F4 /* discount-wrapper.c */; };
 		4446D0060F41899C00BAC3F4 /* discount-wrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4446CFF30F41899C00BAC3F4 /* discount-wrapper.h */; };
@@ -50,6 +51,7 @@
 		0A80BFB10E21A90900C8BF14 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		0A80BFCB0E21B61A00C8BF14 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		0C8824D01E8FE4F600ED18A5 /* github.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.css; sourceTree = "<group>"; };
 		2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		4446CFF20F41899C00BAC3F4 /* discount-wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "discount-wrapper.c"; sourceTree = "<group>"; };
 		4446CFF30F41899C00BAC3F4 /* discount-wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "discount-wrapper.h"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				8D576317048677EA00EA77CD /* Info.plist */,
 				8D5B49A704867FD3000E48DA /* InfoPlist.strings */,
 				4446D0230F41AD4700BAC3F4 /* styles.css */,
+				0C8824D01E8FE4F600ED18A5 /* github.css */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
 				4446D0240F41AD4700BAC3F4 /* styles.css in Resources */,
 				AB40554314D008B3009A583A /* blocktags in Resources */,
+				0C8824D11E8FE4F600ED18A5 /* github.css in Resources */,
 				AB40554614D008B3009A583A /* README.markdown in Resources */,
 				AB40554714D008B3009A583A /* update.sh in Resources */,
 				AB40554A14D00A6A009A583A /* update-discount.sh in Resources */,
