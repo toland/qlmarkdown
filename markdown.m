@@ -8,16 +8,16 @@ NSData* renderMarkdown(NSURL* url)
         
         // command line switch theme
         NSDictionary *defaults = [[NSUserDefaults standardUserDefaults] persistentDomainForName:domainName];
-        NSString *styleName = [[defaults valueForKey:@"theme"] lowercaseString];
+        NSString *styleName = [defaults valueForKey:@"theme"];
         
-        if ([styleName length] == 0 || [styleName  isEqual:@"default"]) {
-            styleName = @"styles";
+        if (styleName == nil || [[styleName lowercaseString] isEqual:@"default"]) {
+            styleName = @"github";
         }
         NSString *styles = [[NSString alloc] initWithContentsOfFile:[[NSBundle bundleWithIdentifier:domainName]
                                                                      pathForResource:styleName ofType:@"css"]
                                                            encoding:NSUTF8StringEncoding
                                                               error:nil];
-        
+
         NSStringEncoding usedEncoding = 0;
         NSError *e = nil;
         
@@ -26,7 +26,7 @@ NSData* renderMarkdown(NSURL* url)
         if (usedEncoding == 0) {
             NSLog(@"Wasn't able to determine encoding for file “%@”", [url path]);
         }
-        
+
         char *output = convert_markdown_to_string([source UTF8String]);
         NSString *html = [NSString stringWithFormat:@"<!DOCTYPE html>\n"
                           "<html>\n"
