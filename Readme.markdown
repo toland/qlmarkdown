@@ -2,7 +2,6 @@ QLMarkdown
 ==========
 
 by Phil Toland
-<http://fiatdev.com>
 
 fixes and improvements by Michael Dominic K.
 <http://www.mdk.org.pl>
