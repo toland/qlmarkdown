@@ -1,6 +1,7 @@
-#include "discount/markdown.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "discount/markdown.h"
 
 char *convert_markdown_to_string(const char *str) {
   char *out = NULL;

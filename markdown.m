@@ -1,11 +1,13 @@
-#include "markdown.h"
 #include "discount-wrapper.h"
 
-NSData *renderMarkdown(NSURL *url) {
+#include "markdown.h"
+
+NSString *renderMarkdown(NSURL *url) {
   @autoreleasepool {
+    NSString *domainName = @"com.fiatdev.QLMarkdown";
+
     NSString *styles = [[NSString alloc]
-        initWithContentsOfFile:[[NSBundle bundleWithIdentifier:@"com.fiatdev.QLMarkdown"] pathForResource:@"styles"
-                                                                                                   ofType:@"css"]
+        initWithContentsOfFile:[[NSBundle bundleWithIdentifier:domainName] pathForResource:@"styles" ofType:@"css"]
                       encoding:NSUTF8StringEncoding
                          error:nil];
 
@@ -23,7 +25,7 @@ NSData *renderMarkdown(NSURL *url) {
                                                  "<html>\n"
                                                  "<head>\n"
                                                  "<meta charset=\"utf-8\">\n"
-                                                 "<style>\n%@</style>\n"
+                                                 "<style type=\"text/css\">\n%@</style>\n"
                                                  "<base href=\"%@\"/>\n"
                                                  "</head>\n"
                                                  "<body>\n"
@@ -32,7 +34,8 @@ NSData *renderMarkdown(NSURL *url) {
                                                  "</html>",
                                                 styles, url, [NSString stringWithUTF8String:output]];
 
-    free(output);
-    return [html dataUsingEncoding:NSUTF8StringEncoding];
+//    free(output);
+
+    return html;
   }
 }
