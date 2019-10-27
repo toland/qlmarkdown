@@ -34,7 +34,7 @@ NSString *renderMarkdown(NSURL *url) {
                                                  "</html>",
                                                 styles, url, [NSString stringWithUTF8String:output]];
 
-//    free(output);
+    free(output);
 
     return html;
   }
