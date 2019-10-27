@@ -1,3 +1,3 @@
 #import <Foundation/Foundation.h>
 
-NSData* renderMarkdown(NSURL* url);
+NSData *renderMarkdown(NSURL *url);
