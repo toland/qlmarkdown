@@ -3,9 +3,11 @@
 
 #include <stdio.h>
 
+#include <inttypes.h>
+
 typedef void MMIOT;
 
-typedef unsigned int mkd_flag_t;
+typedef uint32_t mkd_flag_t;
 
 /* line builder for markdown()
  */
@@ -30,12 +32,10 @@ void mkd_cleanup(MMIOT*);
 
 /* markup functions
  */
-int mkd_dump(MMIOT*, FILE*, int, char*);
+int mkd_dump(MMIOT*, FILE*, mkd_flag_t, char*);
 int markdown(MMIOT*, FILE*, mkd_flag_t);
 int mkd_line(char *, int, char **, mkd_flag_t);
-typedef int (*mkd_sta_function_t)(const int,const void*);
-void mkd_string_to_anchor(char *, int, mkd_sta_function_t, void*, int);
-int mkd_xhtmlpage(MMIOT*,int,FILE*);
+int mkd_xhtmlpage(MMIOT*,mkd_flag_t,FILE*);
 
 /* header block access
  */
@@ -67,6 +67,8 @@ typedef void   (*mkd_free_t)(char*, void*);
 
 void mkd_e_url(void *, mkd_callback_t);
 void mkd_e_flags(void *, mkd_callback_t);
+void mkd_e_anchor(void *, mkd_callback_t);
+void mkd_e_code_format(void*, mkd_callback_t);
 void mkd_e_free(void *, mkd_free_t );
 void mkd_e_data(void *, void *);
 
@@ -106,6 +108,15 @@ void mkd_ref_prefix(MMIOT*, char*);
 #define MKD_NODLIST	0x00100000	/* forbid definition lists */
 #define MKD_EXTRA_FOOTNOTE 0x00200000	/* enable markdown extra-style footnotes */
 #define MKD_NOSTYLE	0x00400000	/* don't extract <style> blocks */
+#define MKD_NODLDISCOUNT 0x00800000	/* disable discount-style definition lists */
+#define	MKD_DLEXTRA	0x01000000	/* enable extra-style definition lists */
+#define MKD_FENCEDCODE	0x02000000	/* enabled fenced code blocks */
+#define MKD_IDANCHOR	0x04000000	/* use id= anchors for TOC links */
+#define MKD_GITHUBTAGS	0x08000000	/* allow dash and underscore in element names */
+#define MKD_URLENCODEDANCHOR 0x10000000 /* urlencode non-identifier chars instead of replacing with dots */
+#define MKD_LATEX	0x40000000	/* handle embedded LaTeX escapes */
+#define MKD_EXPLICITLIST 0x80000000	/* don't combine numbered/bulletted lists */
+
 #define MKD_EMBED	MKD_NOLINKS|MKD_NOIMAGE|MKD_TAGTEXT
 
 /* special flags for mkd_in() and mkd_string()
