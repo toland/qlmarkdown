@@ -7,7 +7,7 @@ char* convert_markdown_to_string(const char *str)
     char *out = NULL;
     
     Document *blob = mkd_string((char *)str, strlen(str), 0);
-    mkd_compile(blob, MKD_EXTRA_FOOTNOTE);
+    mkd_compile(blob, MKD_EXTRA_FOOTNOTE + MKD_FENCEDCODE);
     int sz = mkd_document(blob, &out);
     
     if(sz == 0)
