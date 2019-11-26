@@ -17,7 +17,7 @@ Discount is included as a [fake submodule][]. To upgrade or test other versions 
 	rm -rf discount/
 	git clone git://github.com/Orc/discount.git discount
 
-The discount folder will contain a .git folder following the clone however this folder is not included in the enclosing repository and will not be propagated by a push or clone. 
+The discount folder will contain a .git folder following the clone however this folder is not included in the enclosing repository and will not be propagated by a push or clone.
 
 ## Config files ##
 
