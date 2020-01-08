@@ -1,15 +1,15 @@
-Title: Sample MultiMarkdown Document  
-XHTML Header:    
-Author: Fletcher T. Penney  
+Title: Sample MultiMarkdown Document
+XHTML Header:
+Author: Fletcher T. Penney
 CSS: styles.css
-Base Header Level: 2  
-LaTeX XSLT: article.xslt  
-XMP: CCAttributionShareAlike  
-Copyright: 2006-2007 Fletcher T. Penney.  
-	This work is licensed under a Creative Commons License.  
-	http://creativecommons.org/licenses/by-sa/3.0/  
-Keywords: MultiMarkdown, Markdown, XML, XHTML, XSLT, PDF,   
-Format: complete  
+Base Header Level: 2
+LaTeX XSLT: article.xslt
+XMP: CCAttributionShareAlike
+Copyright: 2006-2007 Fletcher T. Penney.
+	This work is licensed under a Creative Commons License.
+	http://creativecommons.org/licenses/by-sa/3.0/
+Keywords: MultiMarkdown, Markdown, XML, XHTML, XSLT, PDF,
+Format: complete
 
 
 # Introduction #
@@ -59,7 +59,7 @@ First, take a look at the overall structure of the document.  At the very beginn
 
 * In plain text and XHTML snippets[^snippets], it is located at the top of the document.
 
-* In a full XHTML document, is located in the `<head>` section, and the title and CSS metadata, if present, are used appropriately.  
+* In a full XHTML document, is located in the `<head>` section, and the title and CSS metadata, if present, are used appropriately.
 
 * In a PDF generated from my XSLT files, metadata is used to generate the appropriate fields (title, author, keywords) in the PDF itself.  Some PDF readers will let you examine this data.  Additionally, the title, subtitle, author, and copyright are placed at the beginning of the document.
 
@@ -141,13 +141,13 @@ For example, let's have an entry for `glossary`.[^glossary] And what about amper
 
 Since we want the ampersand entry to be sorted with the a's, and not with symbols, we put in the optional sort key `ampersand` to control sorting.
 
-	[^glossary]: glossary: Glossary 
+	[^glossary]: glossary: Glossary
 		A section at the end ...
 
 	[^amp]: glossary: & (ampersand)
 		A punctuation mark ...
 
-[^glossary]: glossary: Glossary 
+[^glossary]: glossary: Glossary
 	A section at the end ...
 
 [^amp]: glossary: & (ampersand)
@@ -177,14 +177,11 @@ You can get more information on my web site:
 
 You can also:
 
-* Email me:  
+* Email me:
 	<mailto:fletcher@fletcherpenney.net>
 
-* Join the MultiMarkdown discussion list:  
+* Join the MultiMarkdown discussion list:
 	<http://groups.google.com/group/multimarkdown>
 
-* Join the Markdown discussion list:  
+* Join the Markdown discussion list:
 	<http://six.pairlist.net/mailman/listinfo/markdown-discuss>
-
-
-
