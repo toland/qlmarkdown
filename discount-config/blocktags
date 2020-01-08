@@ -17,6 +17,7 @@ static struct kw blocktags[] = {
    { "PRE", 3, 0 },
    { "WBR", 3, 0 },
    { "XMP", 3, 0 },
+   { "FORM", 4, 0 },
    { "NOBR", 4, 0 },
    { "STYLE", 5, 0 },
    { "TABLE", 5, 0 },
@@ -30,4 +31,4 @@ static struct kw blocktags[] = {
    { "BLOCKQUOTE", 10, 0 },
 };
 
-#define NR_blocktags 29
+#define NR_blocktags 30
