@@ -1,0 +1,13 @@
+language: objective-c
+script:
+  - xcodebuild -project QLMarkdown.xcodeproj
+  - mv build/Release/QLMarkdown.qlgenerator .
+  - zip -r QLMarkdown.qlgenerator.zip QLMarkdown.qlgenerator
+deploy:
+  provider: releases
+  api_key:
+    secure: "B7JI3ZY+6YDCBFh3cq5JYJDuq3pYXZivLCq7U5ghrQuiUJ57pdvB5BC6yN92ygsFgk8JbTffuQrNsFr6WEZtYbxcPUIAxNba+yikCK2qfPSHeWPBN5Gfr8ovUF9PNXWcC2cv8peqDmMDjrsZu6OLeOWDc9wnrNK5iJRJmu2bRq3o4xIwbu2odU96bWz+WvuOSBBCKcxWVXlT4vbUVRLe/lmvZfheFJ8yekQIpp976xxdIhlV7E8+9ywSiy3L93hhGMrMPIM6acTs81p1STzI2HQv4Re406W4Xb4R7g4YSkqgYCWvIH/D/4aPZxOEGA5DOs81YsjeZ9Oj4PYTpSA58/kic3JmBsatYiOJEV0Auf/LFI0jCqRVLZzqWSnfDul96tE763W+ipEZEHVlEN0FSXnllRQlEwCNCj8HvgtEF2fVSJg8CDnISH8qAx4jBh+gDnEYdSyeMo0WnoOnZW3LvwNT54Va0p7797+pt0CB29k4neU6UVIH6YETXNnDrtuGzCYt9+H7qExJ/cMvHQgwuji1TJ3mB2JaOlHk0fvpQursMUbiY4Kxgh9WEGf3XVx6RuFwn5qGrhqMDDleH/WgCrCNq38OH91cGDkW9jZvfVuT7itgE4Cx7zcdVx3DA/N1/4rCXH/zaj+/KuD8Ko3vy7u/V3MdYJMRXXhlRqVx6zE="
+  file: QLMarkdown.qlgenerator.zip
+  skip_cleanup: true
+  on:
+    tags: true
