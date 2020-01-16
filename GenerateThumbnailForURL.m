@@ -30,7 +30,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thum
 
     // Create the webview to display the thumbnail
     WebView *_webView = [[WebView alloc] initWithFrame:_rect];
-    [_webView scaleUnitSquareToSize:_scaleSize];
+    [_webView.mainFrame.frameView scaleUnitSquareToSize:_scaleSize];
     [_webView.mainFrame.frameView setAllowsScrolling:NO];
     [_webView.mainFrame loadData:data MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:nil];
 
