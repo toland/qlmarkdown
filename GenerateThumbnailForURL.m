@@ -5,6 +5,8 @@
 #import <QuickLook/QuickLook.h>
 #import <WebKit/WebKit.h>
 
+#import "markdown.h"
+
 OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url,
                                  CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize);
 void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbnail);
@@ -17,7 +19,7 @@ void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbn
 OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url,
                                  CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize) {
 
-  NSString *content = [NSString stringWithContentsOfURL:(__bridge NSURL *)url encoding:NSUTF8StringEncoding error:nil];
+  NSString *content = renderMarkdown((__bridge NSURL *)url);
 
   if (content) {
     // Encapsulate the content of the .strings file in HTML
@@ -30,7 +32,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thum
 
     // Create the webview to display the thumbnail
     WebView *_webView = [[WebView alloc] initWithFrame:_rect];
-    [_webView scaleUnitSquareToSize:_scaleSize];
+    [_webView.mainFrame.frameView scaleUnitSquareToSize:_scaleSize];
     [_webView.mainFrame.frameView setAllowsScrolling:NO];
     [_webView.mainFrame loadData:data MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:nil];
 
