@@ -32,11 +32,11 @@ Another method, provided you have [Homebrew Cask](https://caskroom.github.io) in
 
 `$ brew update`
 
-`$ brew cask install qlmarkdown`
+`$ brew install --cask qlmarkdown`
 
 To uninstall:
 
-`$ brew cask uninstall qlmarkdown`
+`$ brew uninstall --cask qlmarkdown`
 
 
  **Note:** *QuickLook doesn't allow selecting text by default. If you want to select the text in the markdown preview, you will
