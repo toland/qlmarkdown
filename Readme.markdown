@@ -28,15 +28,15 @@ If the newly installed plugin is not picked up instantly, you can run `qlmanage 
 
 To uninstall, drag QLMarkdown into the trash.
 
-Another method, provided you have [Homebrew Cask](https://caskroom.github.io) installed, you can run the following commands to set things up:
+Another method, provided you have [Homebrew](https://brew.sh/) installed, you can run the following commands to set things up:
 
 `$ brew update`
 
-`$ brew cask install qlmarkdown`
+`$ brew install qlmarkdown`
 
 To uninstall:
 
-`$ brew cask uninstall qlmarkdown`
+`$ brew uninstall qlmarkdown`
 
 
  **Note:** *QuickLook doesn't allow selecting text by default. If you want to select the text in the markdown preview, you will
